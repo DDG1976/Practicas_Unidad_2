@@ -109,6 +109,11 @@ int c=0,c2=0;
 
         BtnCalcular.setText("Calcular");
         BtnCalcular.setEnabled(false);
+        BtnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCalcularActionPerformed(evt);
+            }
+        });
         jPanel5.add(BtnCalcular);
 
         jButton6.setText("Cerrar");
@@ -139,6 +144,11 @@ int c=0,c2=0;
 
         BotSuma.setText("Suma");
         BotSuma.setEnabled(false);
+        BotSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotSumaActionPerformed(evt);
+            }
+        });
         jPanel4.add(BotSuma);
 
         BotResta.setText("Resta");
@@ -169,14 +179,29 @@ int c=0,c2=0;
 
         btnResta.setText("Resta");
         btnResta.setEnabled(false);
+        btnResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestaActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnResta);
 
         btnMultiplicacion.setText("Multiplicacion");
         btnMultiplicacion.setEnabled(false);
+        btnMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacionActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnMultiplicacion);
 
         btnDivision.setText("Division");
         btnDivision.setEnabled(false);
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnDivision);
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.LINE_END);
@@ -262,7 +287,6 @@ int c=0,c2=0;
     if (v.validarEnteros(n1).equals("decimal")){
            //JOptionPane.showMessageDialog(null, "hola");
           float a=Float.parseFloat(n1);
-          
     if (v.validarEnteros(n2).equals("decimal")){
               
              float b=Float.parseFloat(n2);
@@ -272,7 +296,7 @@ int c=0,c2=0;
         int b=Integer.parseInt(n1);
         float r= a+b;
         lblXD.setText(Float.toString(r));
-    } 
+    }
     }else if(v.validarEnteros(n1).equals("entero")){
          int a=Integer.parseInt(n1);
     if(v.validarEnteros(n2).equals("entero")){
@@ -285,9 +309,118 @@ int c=0,c2=0;
         lblXD.setText(Float.toString(r));
     }
          }
-         
     }//GEN-LAST:event_btnSumaActionPerformed
 
+    private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaActionPerformed
+        // TODO add your handling code here:
+        String n1,n2;
+        n1=Txt_1.getText();
+        n2=Txt_2.getText();
+        Validaciones v= new Validaciones();
+        if (v.validarEnteros(n1).equals("decimal")){
+          float a=Float.parseFloat(n1);
+        if(v.validarEnteros(n2).equals("decimal")){
+          float b=Float.parseFloat(n2);
+          float r= a - b;
+          lblXD.setText(Float.toString(r));
+        }else if(v.validarEnteros(n1).equals("decimal")){
+          int b=Integer.parseInt(n1);
+          float r= a-b;
+          lblXD.setText(Float.toString(r));
+         }else if(v.validarEnteros(n1).equals("entero")){
+         int d=Integer.parseInt(n1);
+        }
+        if(v.validarEnteros(n2).equals("entero")){
+         int b=Integer.parseInt(n2);
+         int f= d - b;
+         lblXD.setText(Integer.toString(f));
+        }else if(v.validarEnteros(n2).equals("decimal")){
+        float t=Float.parseFloat(n2);
+        float r= a-t;
+        lblXD.setText(Float.toString(r));
+    }    
+    }//GEN-LAST:event_btnRestaActionPerformed
+    }
+    private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacionActionPerformed
+        // TODO add your handling code here:
+         String n1,n2;
+        n1=Txt_1.getText();
+        n2=Txt_2.getText();
+        Validaciones v= new Validaciones();
+        if (v.validarEnteros(n1).equals("decimal")){
+          float a=Float.parseFloat(n1);
+        if(v.validarEnteros(n2).equals("decimal")){
+          float b=Float.parseFloat(n2);
+          float r= a * b;
+          lblXD.setText(Float.toString(r));
+        }else if(v.validarEnteros(n1).equals("decimal")){
+          int b=Integer.parseInt(n1);
+          float r= a*b;
+          lblXD.setText(Float.toString(r));
+         }else if(v.validarEnteros(n1).equals("entero")){
+         int d =Integer.parseInt(n1);
+        }
+        if(v.validarEnteros(n2).equals("entero")){
+         int b=Integer.parseInt(n2);
+         int h = d * b;
+         lblXD.setText(Integer.toString(h));
+        }else if(v.validarEnteros(n2).equals("decimal")){
+        float t=Float.parseFloat(n2);
+        float r= a*t;
+        lblXD.setText(Float.toString(r));
+    }//GEN-LAST:event_btnMultiplicacionActionPerformed
+        }
+    }
+    private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
+        // TODO add your handling code here:
+        
+     String n1=Txt_1.getText();
+     String n2=Txt_2.getText();
+if (BotSuma.isSelected()){
+    int a=Integer.parseInt(n1);
+    int b=Integer.parseInt(n2);
+    int c=a+b;
+    lblXD.setText(Integer.toString(c));
+ }
+
+    }//GEN-LAST:event_BtnCalcularActionPerformed
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+        // TODO add your handling code here:
+       String n1,n2;
+        n1=Txt_1.getText();
+        n2=Txt_2.getText();
+        Validaciones v= new Validaciones();
+        if (v.validarEnteros(n1).equals("decimal")){
+          float a=Float.parseFloat(n1);
+        if(v.validarEnteros(n2).equals("decimal")){
+          float b=Float.parseFloat(n2);
+          float r= a / b;
+          lblXD.setText(Float.toString(r));
+        }else if(v.validarEnteros(n1).equals("decimal")){
+          float b=Integer.parseInt(n1);
+          float r= a/b;
+          lblXD.setText(Float.toString(r));
+         }else if(v.validarEnteros(n1).equals("entero")){
+         float d =Float.parseFloat(n1);
+        }
+        if(v.validarEnteros(n2).equals("entero")){
+         float b=Integer.parseInt(n2);
+         float m = d / b;
+         lblXD.setText(Integer.toString(m));
+        }else if(v.validarEnteros(n2).equals("decimal")){
+        float t=Float.parseFloat(n2);
+        float r= a/t;
+        lblXD.setText(Float.toString(r)); 
+    }//GEN-LAST:event_btnDivisionActionPerformed
+
+    private void BotSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotSumaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_BotSumaActionPerformed
+        }
+    
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton BotDivision;
     private javax.swing.JRadioButton BotMult;
